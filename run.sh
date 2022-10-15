@@ -12,7 +12,7 @@ echo "[$(date +"%Y-%m-%d %H:%M:%S")] Starting backup of volume $1..."
 filename="$1_$(date +"%Y%m%d").tar.gz"
 
 docker run --rm \
-  -v $1:ro:/backup-volume \
+  -v $1:/backup-volume:ro \
   busybox \
   tar -zcvf /tmp/$filename -C /backup-volume .
 
