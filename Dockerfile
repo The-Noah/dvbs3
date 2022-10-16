@@ -7,4 +7,4 @@ RUN apk add python3 --no-cache --no-scripts && \
 
 ADD run.sh /run.sh
 
-ENTRYPOINT ["/bin/sh", "-c" "/run.sh"]
+ENTRYPOINT ["/bin/sh", "-c", "/run.sh"]
