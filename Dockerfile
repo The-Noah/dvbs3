@@ -6,6 +6,5 @@ RUN apk add python3 --no-cache --no-scripts && \
   rm -rf /var/cache/apk
 
 ADD run.sh /run.sh
-RUN chmod +x /run.sh
 
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/bin/sh", "-c" "/run.sh"]
