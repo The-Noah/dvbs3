@@ -1,4 +1,5 @@
 FROM docker:latest
+LABEL maintainer="Noah Dunbar <noah@noahdunbar.com>"
 
 RUN apk add python3 --no-cache --no-scripts && \
   python3 -m ensurepip --upgrade && \
