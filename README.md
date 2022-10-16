@@ -1,6 +1,6 @@
 <div align="center">
 
-# **D**ocker **V**olume **B**ackup to **S3**
+# `D`ocker `V`olume `B`ackup to `S3`
 
 [![CICD](https://github.com/The-Noah/dvbs3/actions/workflows/cicd.yml/badge.svg)](https://github.com/The-Noah/dvbs3/actions/workflows/cicd.yml)
 
