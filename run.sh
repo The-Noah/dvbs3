@@ -7,6 +7,18 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+if [ ! -z "$S3_PROVIDER" ]; then
+  if [ "$S3_PROVIDER" = "vultr" ]; then
+    S3_HOST="ewr1.vultrobjects.com"
+    S3_HOST_BUCKET="%(bucket)s.ewr1.vultrobjects.com"
+  else
+    echo "Unknown S3 provider: $S3_PROVIDER"
+    exit 1
+  fi
+
+  echo "Using S3_PROVIDER: $S3_PROVIDER"
+fi
+
 echo "[$(date +"%Y-%m-%d %H:%M:%S")] Starting backup of volume $1..."
 
 filename="$1-$(date +"%Y-%m-%d").tar.gz"
