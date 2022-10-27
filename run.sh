@@ -8,7 +8,12 @@ if [ -z "$1" ]; then
 fi
 
 if [ ! -z "$S3_PROVIDER" ]; then
-  if [ "$S3_PROVIDER" = "vultr" ]; then
+  echo "Using S3 provider: $S3_PROVIDER"
+
+  if [ "$S3_PROVIDER" = "aws" ]; then
+    S3_HOST="s3.amazonaws.com"
+    S3_HOST_BUCKET="%(bucket)s.s3.amazonaws.com"
+  elif [ "$S3_PROVIDER" = "vultr" ]; then
     S3_HOST="ewr1.vultrobjects.com"
     S3_HOST_BUCKET="%(bucket)s.ewr1.vultrobjects.com"
   else
