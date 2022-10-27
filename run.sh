@@ -5,6 +5,12 @@ set -e
 if [ -z "$1" ]; then
   echo "Missing volume name"
   exit 1
+elif [ -z "$AWS_ACCESS_KEY_ID" ]; then
+  echo "Missing AWS_ACCESS_KEY_ID"
+  exit 1
+elif [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
+  echo "Missing AWS_SECRET_ACCESS_KEY"
+  exit 1
 fi
 
 if [ ! -z "$S3_PROVIDER" ]; then
