@@ -27,7 +27,7 @@ jobs:
       run: docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
 
     - name: Build container image latest version
-      run: docker build --progress tty -t ghcr.io/${REPO}:${{ github.sha }} -t ghcr.io/${REPO}:unstable.
+      run: docker build --progress tty -t ghcr.io/${REPO}:${{ github.sha }} -t ghcr.io/${REPO}:unstable .
 
     - name: Push image to GitHub Container Registry
       run: |
